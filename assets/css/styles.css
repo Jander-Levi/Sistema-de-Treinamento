@@ -423,18 +423,6 @@ main {
   flex-direction: column;
 }
 
-.grid-depoimentos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--espacamento-lg);
-}
-
-.grid-planos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--espacamento-lg);
-}
-
 /* ============================================================================
    COMO FUNCIONA
    ============================================================================ */
@@ -469,165 +457,6 @@ main {
 
 .passo p {
   color: var(--cor-neutro-500);
-}
-
-/* ============================================================================
-   DEPOIMENTOS
-   ============================================================================ */
-
-.depoimento {
-  background: white;
-  padding: var(--espacamento-lg);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--sombra-sm);
-}
-
-.depoimento p {
-  font-style: italic;
-  color: var(--cor-neutro-700);
-  margin-bottom: var(--espacamento-md);
-}
-
-.depoimento strong {
-  display: block;
-  color: var(--cor-neutro-900);
-  margin-bottom: var(--espacamento-xs);
-}
-
-.depoimento small {
-  color: var(--cor-neutro-500);
-}
-
-/* ============================================================================
-   PREÇOS
-   ============================================================================ */
-
-.plano {
-  background: white;
-  padding: var(--espacamento-2xl);
-  border-radius: var(--border-radius-xl);
-  border: 1px solid var(--cor-neutro-200);
-  transition: var(--transicao);
-  display: flex;
-  flex-direction: column;
-}
-
-.plano:hover {
-  box-shadow: var(--sombra-lg);
-  transform: translateY(-4px);
-}
-
-.plano.destaque {
-  border-color: var(--cor-primaria);
-  box-shadow: var(--sombra-lg);
-  transform: scale(1.05);
-}
-
-.plano h3 {
-  margin-bottom: var(--espacamento-md);
-}
-
-.preco {
-  margin-bottom: var(--espacamento-lg);
-}
-
-.preco .valor {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--cor-primaria);
-}
-
-.plano .descricao {
-  color: var(--cor-neutro-500);
-  margin-bottom: var(--espacamento-lg);
-}
-
-.plano .btn {
-  width: 100%;
-  margin-bottom: var(--espacamento-lg);
-}
-
-.plano .features {
-  list-style: none;
-  flex: 1;
-}
-
-.plano .features li {
-  padding: var(--espacamento-sm) 0;
-  color: var(--cor-neutro-600);
-}
-
-/* ============================================================================
-   FAQ / ACCORDION
-   ============================================================================ */
-
-.accordion {
-  background: white;
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--cor-neutro-200);
-  overflow: hidden;
-}
-
-.accordion-item {
-  border-bottom: 1px solid var(--cor-neutro-200);
-}
-
-.accordion-item:last-child {
-  border-bottom: none;
-}
-
-.accordion-btn {
-  width: 100%;
-  padding: var(--espacamento-lg);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: left;
-  color: var(--cor-neutro-800);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: var(--transicao);
-  font-family: inherit;
-}
-
-.accordion-btn:hover {
-  background-color: var(--cor-neutro-50);
-}
-
-.accordion-btn:focus {
-  outline: 2px solid var(--cor-primaria);
-  outline-offset: -2px;
-}
-
-.accordion-icon {
-  flex-shrink: 0;
-  font-size: 1.25rem;
-  transition: var(--transicao);
-}
-
-.accordion-content {
-  padding: 0 var(--espacamento-lg) var(--espacamento-lg);
-  max-height: 500px;
-  overflow: hidden;
-  animation: slideDown 0.3s ease-out;
-}
-
-.accordion-content[hidden] {
-  display: none;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    max-height: 0;
-  }
-  to {
-    opacity: 1;
-    max-height: 500px;
-  }
 }
 
 /* ============================================================================
@@ -876,18 +705,6 @@ main {
   background-color: white;
 }
 
-.secao-depoimentos {
-  background-color: var(--cor-neutro-50);
-}
-
-.secao-precos {
-  background-color: white;
-}
-
-.secao-faq {
-  background-color: var(--cor-neutro-50);
-}
-
 .courses-container {
   padding: var(--espacamento-2xl) var(--espacamento-lg);
   max-width: 1200px;
@@ -1057,9 +874,6 @@ main {
     width: 100%;
   }
 
-  .plano.destaque {
-    transform: scale(1);
-  }
 
   main {
     min-height: calc(100vh - 200px);
@@ -1108,10 +922,6 @@ main {
     gap: var(--espacamento-lg);
   }
 
-  .grid-depoimentos,
-  .grid-planos {
-    grid-template-columns: 1fr;
-  }
 
   .footer-content {
     grid-template-columns: 1fr;

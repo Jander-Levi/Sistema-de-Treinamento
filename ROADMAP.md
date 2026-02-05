@@ -39,7 +39,6 @@ Tarefas:
 ☐ Escrever descrições profissionais
 ☐ Melhorar/customizar design (logo, cores, fontes)
 ☐ Adicionar blog com 5-10 posts
-☐ Melhorar FAQ com 10+ perguntas
 ☐ Criar página "Sobre" profissional
 ☐ Criar página "Contato" com formulário
 ☐ Otimizar imagens
@@ -67,7 +66,6 @@ Tarefas:
 ☐ Validação front-end (cliente)
 ☐ Feedback visual (erros, sucesso)
 ☐ Newsletter signup
-☐ Modal de "Escolher plano" com form
 ☐ Captura de leads básica (salvar em localStorage)
 ☐ Integrar com EmailJS ou Formspree (opcional)
 
@@ -189,7 +187,6 @@ Funcionalidades:
 ☐ CRUD de cursos
 ☐ CRUD de usuários
 ☐ Analisar progresso de alunos
-☐ Gerenciar depoimentos/FAQ
 ☐ Relátorios (revenue, engagement)
 ☐ Email marketing
 ☐ Suporte a tickets
@@ -210,7 +207,6 @@ Objetivo: Monetizar a plataforma
 Integração:
 ☐ Stripe ou PayPal
 ☐ Webhooks para confirmar pagamento
-☐ Atualizar plano do usuário após pagamento
 ☐ Cancelamento de inscrição
 ☐ Invoice/recibos
 

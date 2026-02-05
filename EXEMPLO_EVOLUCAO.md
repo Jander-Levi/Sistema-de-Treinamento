@@ -38,58 +38,12 @@ export const cursos = [
   novoClase // Adicione aqui
 ];
 
-// ============================================================
-// 2. ADICIONAR NOVO PLANO
-// ============================================================
-// Em data.js:
-
-const unicornPlan = {
-  id: "unicorn",
-  nome: "Unicorn",
-  preco: "299",
-  descricao: "Plano premium máximo",
-  features: [
-    "Tudo do plano Enterprise",
-    "1:1 com mentores",
-    "Early access a novos cursos",
-    "Custom learning paths"
-  ]
-};
-
-export const planos = [
-  // ... planos existentes ...
-  unicornPlan
-];
+// Observação:
+// Apenas cursos com categoria "Financeiro" exibem detalhes completos no card.
+// Para liberar outros, ajuste a regra em assets/js/modules/ui.js (criarCardCurso).
 
 // ============================================================
-// 3. ADICIONAR NOVO FAQ
-// ============================================================
-// Em data.js:
-
-export const faqItems = [
-  // ... itens existentes ...
-  {
-    pergunta: "Posso cancelar a qualquer momento?",
-    resposta: "Sim! Sem contrato de longa duração. Cancele quando quiser."
-  }
-];
-
-// ============================================================
-// 4. ADICIONAR DEPOIMENTO
-// ============================================================
-// Em data.js:
-
-export const depoimentos = [
-  // ... depoimentos existentes ...
-  {
-    autor: "Paula Oliveira",
-    funcao: "Tech Lead",
-    texto: "Transformou minha equipe. Todos completaram pelo menos 3 cursos."
-  }
-];
-
-// ============================================================
-// 5. ADICIONAR NOVA SEÇÃO NA LANDING PAGE
+// 2. ADICIONAR NOVA SEÇÃO NA LANDING PAGE
 // ============================================================
 // Em assets/js/modules/ui.js:
 
@@ -120,9 +74,6 @@ export function renderLandingPage() {
   main.appendChild(criarSecaoCursoEmDestaque());
   main.appendChild(criarSecaoComoFunciona());
   main.appendChild(criarSecaoBlog()); // ← NOVA SEÇÃO
-  main.appendChild(criarSecaoDepoimentos());
-  main.appendChild(criarSecaoPrecos());
-  main.appendChild(criarFAQ());
 }
 
 // E em styles.css, adicione:
@@ -148,7 +99,7 @@ export function renderLandingPage() {
 }
 
 // ============================================================
-// 6. ADICIONAR NOVA ROTA
+// 3. ADICIONAR NOVA ROTA
 // ============================================================
 // Em assets/js/modules/router.js:
 
@@ -167,7 +118,7 @@ export function renderBlogPage() {
 }
 
 // ============================================================
-// 7. ADICIONAR NOVO ESTADO GLOBAL
+// 4. ADICIONAR NOVO ESTADO GLOBAL
 // ============================================================
 // Em assets/js/modules/state.js:
 
@@ -178,7 +129,7 @@ export function definirTemaBuscado(tema) {
 }
 
 // ============================================================
-// 8. PERSISTIR NOVO DADO
+// 5. PERSISTIR NOVO DADO
 // ============================================================
 // Em state.js, dentro de inicializarEstado():
 
@@ -198,7 +149,7 @@ salvarNoStorage('estado', {
 });
 
 // ============================================================
-// 9. ADICIONAR NOVO COMPONENTE
+// 6. ADICIONAR NOVO COMPONENTE
 // ============================================================
 // Em ui.js:
 
@@ -256,7 +207,7 @@ function criarModalCertificado(nomeUsuario, nomeCurso) {
 }
 
 // ============================================================
-// 10. MODIFICAR COR DA PALETA
+// 7. MODIFICAR COR DA PALETA
 // ============================================================
 // Em styles.css, altere :root:
 

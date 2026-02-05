@@ -3,11 +3,11 @@
 export const cursos = [
   {
     id: 1,
-    titulo: "Finanças Empresariais",
-    descricao: "Aprenda fluxo de caixa, análise de demonstrativos e planejamento financeiro na prática",
+    titulo: "Finananceiro",
+    descricao: "Em produção...",
     categoria: "Financeiro",
-    nivel: "Intermediário",
-    duracao: 12,
+    nivel: "Iniciante",
+    duracao: 2,
     imagem: "💰",
     instrutor: "Nome do Instrutor",
     publicoAlvo: "Analistas, gestores e empreendedores",
@@ -17,7 +17,7 @@ export const cursos = [
       "Aplicar indicadores financeiros para tomada de decisão"
     ],
     preRequisitos: [
-      "Noções básicas de matemática financeira"
+      "Conhecimentos relacionados ao financeiro/ cobrança",
     ],
     modulos: [
       {
@@ -31,36 +31,36 @@ export const cursos = [
           },
           {
             id: 2,
-            titulo: "Juros simples e compostos",
+            titulo: "Em produção...",
             videoAula: "",
             materialDidatico: ""
           },
           {
             id: 3,
-            titulo: "Valor do dinheiro no tempo",
+            titulo: "Em produção...",
             videoAula: "",
             materialDidatico: ""
           }
         ]
       },
       {
-        titulo: "Análise e Planejamento",
+        titulo: "Em produção...",
         aulas: [
           {
             id: 4,
-            titulo: "Balanço patrimonial e DRE",
+            titulo: "Em produção...",
             videoAula: "",
             materialDidatico: ""
           },
           {
             id: 5,
-            titulo: "Fluxo de caixa e capital de giro",
+            titulo: "Em produção...",
             videoAula: "",
             materialDidatico: ""
           },
           {
             id: 6,
-            titulo: "Indicadores e KPIs financeiros",
+            titulo: "Em produção...",
             videoAula: "",
             materialDidatico: ""
           }
@@ -219,87 +219,5 @@ export const cursos = [
         ]
       }
     ]
-  }
-];
-
-export const planos = [
-  {
-    id: "free",
-    nome: "Gratuito",
-    preco: "0",
-    descricao: "Perfeito para começar",
-    features: [
-      "2 cursos de exemplo",
-      "Comunidade de apoio",
-      "Certificado digital"
-    ]
-  },
-  {
-    id: "pro",
-    nome: "Profissional",
-    preco: "49",
-    descricao: "Mais poderoso para profissionais",
-    features: [
-      "Todos os cursos",
-      "Suporte prioritário",
-      "Certificados verificáveis",
-      "Projetos práticos",
-      "Comunidade VIP"
-    ],
-    destaque: true
-  },
-  {
-    id: "enterprise",
-    nome: "Enterprise",
-    preco: "199",
-    descricao: "Para equipes e organizações",
-    features: [
-      "Tudo do plano Pro",
-      "Acesso corporativo",
-      "Pessoas ilimitadas",
-      "Relatórios avançados",
-      "Suporte dedicado 24/7"
-    ]
-  }
-];
-
-export const faqItems = [
-  {
-    pergunta: "Como funciona a plataforma?",
-    resposta: "Você se registra, escolhe um curso e aprende no seu próprio ritmo. Cada curso tem módulos e aulas que você pode marcar como concluídas."
-  },
-  {
-    pergunta: "Posso baixar os cursos?",
-    resposta: "Sim! Os alunos do plano Pro e Enterprise podem baixar o conteúdo para estudo offline."
-  },
-  {
-    pergunta: "Quanto tempo duram os cursos?",
-    resposta: "Varia de 5 a 12 horas cada um. Você controla seu próprio ritmo e pode fazer uma aula por semana ou todas em um dia."
-  },
-  {
-    pergunta: "E se eu não gostar do curso?",
-    resposta: "Oferecemos reembolso em 30 dias. Sem perguntas."
-  },
-  {
-    pergunta: "Como obtenho certificado?",
-    resposta: "Após completar 100% de um curso e passar na avaliação final, você recebe um certificado digital verificável."
-  }
-];
-
-export const depoimentos = [
-  {
-    autor: "Ana Silva",
-    funcao: "Front-end Developer",
-    texto: "Os cursos mudaram minha carreira. Super prático e didático!"
-  },
-  {
-    autor: "Carlos Costa",
-    funcao: "Designer",
-    texto: "Finalmente entendi CSS Grid e Flexbox. Recomendo muito!"
-  },
-  {
-    autor: "Marina Santos",
-    funcao: "Full-stack Dev",
-    texto: "Material excelente, instrutores incríveis. Vale cada centavo."
   }
 ];

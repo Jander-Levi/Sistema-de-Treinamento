@@ -19,7 +19,7 @@
     │   └── js/
     │       ├── app.js               (inicialização)
     │       └── modules/
-    │           ├── data.js          (6 cursos + 3 planos + FAQ)
+    │           ├── data.js          (6 cursos)
     │           ├── state.js         (estado global reativo)
     │           ├── storage.js       (persistência em localStorage)
     │           ├── router.js        (navegação por hash)
@@ -29,7 +29,7 @@
     ├── INICIAR.txt                  ← 👈 Quick start (leia primeiro!)
     ├── CHECKLIST.md                 ← Como testar tudo
     ├── EXEMPLO_EVOLUCAO.md          ← Como adicionar conteúdo
-    ├── ROADMAP.md                   ← Plano de evolução (10 fases)
+    ├── ROADMAP.md                   ← Roteiro de evolução (10 fases)
     └── RESUMO_FINAL.md              ← Este arquivo
 
 ════════════════════════════════════════════════════════════════════════════════
@@ -38,24 +38,22 @@
 
 LANDING PAGE (Home)
 ✓ Hero com headline + CTA
-✓ 3 cursos em destaque com cards
+✓ 3 cursos em destaque com cards (somente Financeiro com informações)
 ✓ Seção "Como Funciona" (3 passos)
-✓ Seção de Depoimentos (3 clientes)
-✓ Seção de Preços (3 planos)
-✓ FAQ com 5 perguntas (accordion interativo)
 ✓ Footer com links profissionais
 
 NAVEGAÇÃO INTERNA
 ✓ #/home        → Landing page
-✓ #/courses     → Lista todos os 6 cursos
-✓ #/course/:id  → Detalhe do curso com módulos/aulas
+✓ #/courses     → Lista os 6 cards (somente Financeiro com detalhes)
+✓ #/course/:id  → Detalhe do curso (apenas categoria Financeiro)
 ✓ #/dashboard   → Progresso do usuário (simulado)
 
 FUNCIONALIDADES DE CURSO
 ✓ Listar cursos com grid responsivo
 ✓ Buscar cursos (com debounce)
 ✓ Filtrar por categoria
-✓ Ver detalhes do curso (módulos e aulas)
+✓ Ver detalhes do curso (somente Financeiro)
+✓ Cursos não financeiros exibem "Em produção"
 ✓ Marcar aulas como concluídas (checkbox)
 ✓ Barra de progresso por curso
 ✓ Badge visual de aula concluída
@@ -117,16 +115,12 @@ Arquivos Criados:        11
 Dados Inclusos:
   - 6 cursos completos
   - 23 aulas distribuidadas
-  - 3 planos de preço
-  - 5 perguntas FAQ
-  - 3 depoimentos
 
 Componentes Criados:      12+
   - Header dinâmico
   - Cards de curso (reutilizáveis)
   - Grid de produtos
   - Formulários
-  - Accordion FAQ
   - Progress bars
   - Toast notifications
   - Modal simulado
@@ -197,13 +191,12 @@ Performance:
 📄 EXEMPLO_EVOLUCAO.md
    → 10 exemplos práticos de como expandir
    → Adicionar novo curso
-   → Adicionar novo plano
    → Adicionar nova seção
    → Adicionar nova rota
    → E muito mais!
 
 📄 ROADMAP.md
-   → Plano de desenvolvimento em 10 fases
+   → Roteiro de desenvolvimento em 10 fases
    → Timeline realista
    → Estimativas de esforço
    → Prioridades recomendadas
@@ -257,7 +250,6 @@ Opção B: ENTENDER (1-2 horas)
 Opção C: CUSTOMIZAR (2-4 horas)
    ☐ Abra data.js e adicione um novo curso
    ☐ Mude as cores em styles.css
-   ☐ Adicione um novo depoimento
    ☐ Modifique o nome do site
    ☐ Crie um design único
    ✓ Projeto é seu!
@@ -348,6 +340,6 @@ Quando pronto para evoluir:
 
 ════════════════════════════════════════════════════════════════════════════════
 
-Última atualização: 4 de fevereiro de 2026
+Última atualização: 5 de fevereiro de 2026
 Versão: 1.0 - Protótipo Profissional
 Status: ✅ Pronto para produção e evolução

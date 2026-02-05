@@ -13,7 +13,7 @@ Treinamento/
 │   └── js/
 │       ├── app.js                      # Inicialização da aplicação
 │       └── modules/
-│           ├── data.js                 # Dados mockados (cursos, planos, FAQ)
+│           ├── data.js                 # Dados mockados (cursos)
 │           ├── state.js                # Gerenciamento de estado global
 │           ├── storage.js              # Persistência em localStorage
 │           ├── router.js               # Navegação por hash
@@ -36,17 +36,14 @@ Treinamento/
 ### 3. Funcionalidades da Landing Page
 - Header com navegação
 - Hero com CTA "Começar agora"
-- 3 Cursos em destaque
+- 3 Cursos em destaque (apenas o Financeiro com informações; demais em produção)
 - Seção "Como funciona" (3 passos)
-- Depoimentos
-- Planos de preço (3 opcões)
-- FAQ com accordion interativo
 - Footer
 
 ### 4. Funcionalidades Internas
-- **Listar Cursos**: Vá para #/courses, veja todos os 6 cursos
+- **Listar Cursos**: Vá para #/courses, veja os 6 cards (somente Financeiro com detalhes)
 - **Filtrar**: Busque por texto ou categoria
-- **Ver Detalhe**: Clique em um curso para ver módulos e aulas
+- **Ver Detalhe**: Clique no curso Financeiro para ver módulos e aulas
 - **Marcar Aulas**: Clique no checkbox para marcar como concluída
 - **Login Simulado**: Clique em "Entrar" no header para simular login
 - **Dashboard**: Veja seu progresso geral e cursos em andamento
@@ -55,10 +52,7 @@ Treinamento/
 ## 💾 Dados e Estado
 
 ### data.js
-- 6 cursos com módulos e aulas
-- 3 planos (Free, Pro, Enterprise)
-- 5 perguntas FAQ
-- 3 depoimentos
+- 6 cursos com módulos e aulas (apenas categoria Financeiro exibe detalhes)
 
 ### state.js
 - Estado global reativo
@@ -149,7 +143,6 @@ Treinamento/
 
 11. **Pagamento**
     - Stripe/PayPal integration
-    - Planos com cobrança real
     - Webhooks para ativar acesso
 
 12. **Notificações**

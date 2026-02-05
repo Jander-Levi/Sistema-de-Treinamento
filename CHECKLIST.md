@@ -5,7 +5,7 @@
 - [x] `index.html` - Arquivo HTML principal
 - [x] `assets/css/styles.css` - Estilos (1000+ linhas, 100% responsivo)
 - [x] `assets/js/app.js` - Inicialização
-- [x] `assets/js/modules/data.js` - 6 cursos + planos + FAQ + depoimentos
+- [x] `assets/js/modules/data.js` - 6 cursos
 - [x] `assets/js/modules/state.js` - Estado global e reatividade
 - [x] `assets/js/modules/storage.js` - Persistência em localStorage
 - [x] `assets/js/modules/router.js` - Navegação por hash
@@ -21,11 +21,8 @@ Abra index.html em um navegador.
 Você deveria ver:
 - Header com logo "🎓 Treinamento"
 - Hero com "Aprenda Web Development do Zero"
-- 3 cursos em destaque
+- 3 cursos em destaque (apenas o Financeiro com informações; demais em produção)
 - Seção "Como Funciona" com 3 passos
-- Depoimentos
-- 3 planos de preço
-- 5 perguntas FAQ interativas
 - Footer com links
 ```
 
@@ -35,23 +32,26 @@ URL: file:///c:/Users/jande/Desktop/Treinamento/index.html (ou http://localhost:
 ✓ Tudo carrega sem erros
 ✓ RWD funciona (teste em mobile no DevTools)
 ✓ Cores e tipografia são profissionais
-✓ FAQ abre/fecha ao clicar
 ```
 
 ### 3. Navegação
 ```
 Clique em "Cursos" no header:
 - ✓ Vai para #/courses
-- ✓ Mostra 6 cursos em grid
+- ✓ Mostra 6 cursos em grid (somente Financeiro com detalhes)
 - ✓ Filtro de busca funciona
 - ✓ Filtro de categoria funciona
 - ✓ Sem resultados mostra mensagem
 
-Clique em um curso:
-- ✓ Vai para #/course/1 (ou ID do curso)
+Clique no curso Financeiro:
+- ✓ Vai para #/course/1
 - ✓ Mostra detalhes, módulos e aulas
 - ✓ Botão "Voltar" retorna para cursos
 - ✓ Checkboxes dos cursos funcionam
+
+Clique em um curso em produção:
+- ✓ Mostra toast "Curso em produção."
+- ✓ Não navega para detalhe
 
 Clique em "Entrar":
 - ✓ Modal pede seu nome

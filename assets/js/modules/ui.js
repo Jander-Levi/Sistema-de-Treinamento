@@ -1,6 +1,6 @@
 // ui.js - Componentes e renderização de UI
 
-import { cursos, planos, faqItems, depoimentos } from "./data.js";
+import { cursos } from "./data.js";
 import {
   obterEstado,
   atualizarFiltros,
@@ -93,8 +93,6 @@ function criarHeader() {
           <a href="#/home">Início</a>
           <a href="#/courses">Cursos</a>
           <a href="#/">Como funciona</a>
-          <a href="#/">Preços</a>
-          <a href="#/">FAQ</a>
         </nav>
         <div class="header-actions">
           ${
@@ -134,11 +132,25 @@ function criarHeader() {
 }
 
 function criarCardCurso(curso) {
+  const cursoDisponivel = curso.categoria === "Financeiro";
+  const card = document.createElement("div");
+  card.className = "card-curso";
+
+  if (!cursoDisponivel) {
+    card.innerHTML = `
+      <div class="card-body">
+        <h3>Em produção</h3>
+      </div>
+    `;
+    card.addEventListener("click", () => {
+      mostrarToast("Curso em produção.", "info");
+    });
+    return card;
+  }
+
   const progresso = calcularProgressoCurso(curso);
   const temProgresso = progresso > 0;
 
-  const card = document.createElement("div");
-  card.className = "card-curso";
   card.innerHTML = `
     <div class="card-header">
       <span class="imagem-curso">${curso.imagem}</span>
@@ -249,126 +261,6 @@ function criarSecaoComoFunciona() {
   return section;
 }
 
-function criarSecaoDepoimentos() {
-  const section = document.createElement("section");
-  section.className = "secao secao-depoimentos";
-
-  let html = `
-    <div class="container">
-      <h2>O que Dizem Nossos Alunos</h2>
-      <div class="grid-depoimentos">
-  `;
-
-  depoimentos.forEach((dep) => {
-    html += `
-      <div class="depoimento">
-        <p>"${dep.texto}"</p>
-        <strong>${dep.autor}</strong>
-        <small>${dep.funcao}</small>
-      </div>
-    `;
-  });
-
-  html += `
-      </div>
-    </div>
-  `;
-
-  section.innerHTML = html;
-  return section;
-}
-
-function criarSecaoPrecos() {
-  const section = document.createElement("section");
-  section.className = "secao secao-precos";
-
-  let html = `
-    <div class="container">
-      <h2>Planos</h2>
-      <div class="grid-planos">
-  `;
-
-  planos.forEach((plano) => {
-    const destaque = plano.destaque ? "destaque" : "";
-    html += `
-      <div class="plano ${destaque}">
-        <h3>${plano.nome}</h3>
-        <div class="preco"><span class="valor">R$ ${plano.preco}</span>/mês</div>
-        <p class="descricao">${plano.descricao}</p>
-        <button class="btn btn-primario" data-plano="${plano.id}">Escolher plano</button>
-        <ul class="features">
-    `;
-
-    plano.features.forEach((feature) => {
-      html += `<li>✓ ${feature}</li>`;
-    });
-
-    html += `
-        </ul>
-      </div>
-    `;
-  });
-
-  html += `
-      </div>
-    </div>
-  `;
-
-  section.innerHTML = html;
-
-  section.querySelectorAll(".btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const planoId = btn.dataset.plano;
-      mostrarToast(`Você escolheu o plano ${planoId}!`, "info");
-    });
-  });
-
-  return section;
-}
-
-function criarFAQ() {
-  const section = document.createElement("section");
-  section.className = "secao secao-faq";
-  section.innerHTML = `<div class="container"><h2>Perguntas Frequentes</h2><div class="accordion" id="accordion"></div></div>`;
-
-  const accordion = section.querySelector("#accordion");
-
-  faqItems.forEach((item, idx) => {
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "accordion-item";
-    itemDiv.innerHTML = `
-      <button class="accordion-btn" aria-expanded="false" aria-controls="panel-${idx}">
-        ${item.pergunta}
-        <span class="accordion-icon">+</span>
-      </button>
-      <div id="panel-${idx}" class="accordion-content" hidden>
-        <p>${item.resposta}</p>
-      </div>
-    `;
-
-    const btn = itemDiv.querySelector(".accordion-btn");
-
-    btn.addEventListener("click", () => {
-      const isOpen = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", !isOpen);
-      itemDiv.querySelector(".accordion-content").hidden = isOpen;
-      btn.querySelector(".accordion-icon").textContent = isOpen ? "+" : "−";
-    });
-
-    // Navegação por teclado
-    btn.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        btn.click();
-      }
-    });
-
-    accordion.appendChild(itemDiv);
-  });
-
-  return section;
-}
-
 function criarFooter() {
   const footer = document.createElement("footer");
   footer.className = "footer";
@@ -415,9 +307,6 @@ export function renderLandingPage() {
   main.appendChild(criarSecaoHero());
   main.appendChild(criarSecaoCursoEmDestaque());
   main.appendChild(criarSecaoComoFunciona());
-  main.appendChild(criarSecaoDepoimentos());
-  main.appendChild(criarSecaoPrecos());
-  main.appendChild(criarFAQ());
 }
 
 export function renderCoursesPage() {
