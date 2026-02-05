@@ -79,7 +79,7 @@ function criarHeader() {
   header.innerHTML = `
     <div class="container">
       <div class="header-content">
-        <a href="#/home" class="logo">🎓 Treinamento</a>
+        <a href="#/home" class="logo">🎓 Plataforma de Treinamento G2G</a>
         <nav class="nav">
           <a href="#/home">Início</a>
           <a href="#/courses">Cursos</a>
