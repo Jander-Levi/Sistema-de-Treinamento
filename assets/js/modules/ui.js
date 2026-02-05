@@ -25,6 +25,15 @@ function debounce(func, delay) {
   };
 }
 
+function obterUrlEmbed(videoUrl) {
+  if (!videoUrl) return null;
+  const match = videoUrl.match(
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{6,})/,
+  );
+  if (!match) return null;
+  return `https://www.youtube.com/embed/${match[1]}`;
+}
+
 function mostrarToast(mensagem, tipo = "sucesso") {
   const toast = document.createElement("div");
   toast.className = `toast toast-${tipo}`;
@@ -79,7 +88,7 @@ function criarHeader() {
   header.innerHTML = `
     <div class="container">
       <div class="header-content">
-        <a href="#/home" class="logo">🎓 Treinamento</a>
+        <a href="#/home" class="logo"><img src="https://intranet.g2gsistemas.com.br/arquivos_publicos//logo_g2g.png" alt="Logo G2G" class="logo-img"><span class="logo-text">Plataforma de Treinamento G2G</span></a>
         <nav class="nav">
           <a href="#/home">Início</a>
           <a href="#/courses">Cursos</a>
@@ -166,7 +175,8 @@ function criarSecaoHero() {
   section.innerHTML = `
     <div class="container">
       <div class="hero-content">
-        <h1>Aprenda Web Development do Zero</h1>
+        <h1>Bem-vindo à Plataforma de Treinamento</h1>
+        <img src="https://intranet.g2gsistemas.com.br/arquivos_publicos//logo_g2g.png" alt="Logo G2G" class="hero-logo">
         <p>Cursos práticos e modernos para quem quer se destacar</p>
         <button class="btn btn-grande" id="btnComeco">Começar Agora</button>
       </div>
@@ -527,13 +537,35 @@ export function renderCourseDetail(cursoId) {
     let aulasHtml = '<ul class="aulas-list">';
     modulo.aulas.forEach((aula) => {
       const concluida = aulasConcluidasIds.includes(aula.id);
+      const videoEmbedUrl = obterUrlEmbed(aula.videoAula);
+      const videoHtml = videoEmbedUrl
+        ? `
+            <div class="aula-video">
+              <iframe
+                src="${videoEmbedUrl}"
+                title="Vídeo aula: ${aula.titulo}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          `
+        : aula.videoAula
+          ? `
+            <div class="aula-video">
+              <video controls src="${aula.videoAula}"></video>
+            </div>
+          `
+          : "";
       aulasHtml += `
         <li class="aula-item ${concluida ? "concluida" : ""}">
-          <input type="checkbox" id="aula-${aula.id}" ${concluida ? "checked" : ""} class="aula-checkbox">
-          <label for="aula-${aula.id}">
-            <span class="aula-titulo">${aula.titulo}</span>
-            ${concluida ? '<span class="badge-concluida">✓</span>' : ""}
-          </label>
+          <div class="aula-main">
+            <input type="checkbox" id="aula-${aula.id}" ${concluida ? "checked" : ""} class="aula-checkbox">
+            <label for="aula-${aula.id}">
+              <span class="aula-titulo">${aula.titulo}</span>
+              ${concluida ? '<span class="badge-concluida">✓</span>' : ""}
+            </label>
+          </div>
+          ${videoHtml}
         </li>
       `;
     });

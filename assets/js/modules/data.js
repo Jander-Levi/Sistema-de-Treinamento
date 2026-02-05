@@ -3,27 +3,67 @@
 export const cursos = [
   {
     id: 1,
-    titulo: "JavaScript Avançado",
-    descricao: "Domine conceitos avançados de JavaScript moderno",
-    categoria: "JavaScript",
+    titulo: "Finanças Empresariais",
+    descricao: "Aprenda fluxo de caixa, análise de demonstrativos e planejamento financeiro na prática",
+    categoria: "Financeiro",
     nivel: "Intermediário",
     duracao: 12,
-    imagem: "📚",
+    imagem: "💰",
+    instrutor: "Nome do Instrutor",
+    publicoAlvo: "Analistas, gestores e empreendedores",
+    objetivos: [
+      "Controlar fluxo de caixa e capital de giro",
+      "Interpretar balanço patrimonial e DRE",
+      "Aplicar indicadores financeiros para tomada de decisão"
+    ],
+    preRequisitos: [
+      "Noções básicas de matemática financeira"
+    ],
     modulos: [
       {
-        titulo: "Fundamentos",
+        titulo: "Fundamentos Financeiros",
         aulas: [
-          { id: 1, titulo: "Escopo e Closure" },
-          { id: 2, titulo: "Hoisting e Temporal Dead Zone" },
-          { id: 3, titulo: "Protótipos e Herança" }
+          {
+            id: 1,
+            titulo: "Geração Financeiro em Lotes",
+            videoAula: "https://youtube.com/watch?v=FnK5rw0TiG4",
+            materialDidatico: ""
+          },
+          {
+            id: 2,
+            titulo: "Juros simples e compostos",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 3,
+            titulo: "Valor do dinheiro no tempo",
+            videoAula: "",
+            materialDidatico: ""
+          }
         ]
       },
       {
-        titulo: "APIs Modernas",
+        titulo: "Análise e Planejamento",
         aulas: [
-          { id: 4, titulo: "Promises e Async/Await" },
-          { id: 5, titulo: "Fetch API" },
-          { id: 6, titulo: "Web APIs" }
+          {
+            id: 4,
+            titulo: "Balanço patrimonial e DRE",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 5,
+            titulo: "Fluxo de caixa e capital de giro",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 6,
+            titulo: "Indicadores e KPIs financeiros",
+            videoAula: "",
+            materialDidatico: ""
+          }
         ]
       }
     ]
@@ -40,16 +80,26 @@ export const cursos = [
       {
         titulo: "Fundamentos",
         aulas: [
-          { id: 7, titulo: "Flexbox" },
-          { id: 8, titulo: "CSS Grid" },
-          { id: 9, titulo: "Media Queries" }
+          { id: 7, titulo: "Flexbox", videoAula: "", materialDidatico: "" },
+          { id: 8, titulo: "CSS Grid", videoAula: "", materialDidatico: "" },
+          { id: 9, titulo: "Media Queries", videoAula: "", materialDidatico: "" }
         ]
       },
       {
         titulo: "Avançado",
         aulas: [
-          { id: 10, titulo: "Custom Properties" },
-          { id: 11, titulo: "Animações CSS" }
+          {
+            id: 10,
+            titulo: "Custom Properties",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 11,
+            titulo: "Animações CSS",
+            videoAula: "",
+            materialDidatico: ""
+          }
         ]
       }
     ]
@@ -66,9 +116,19 @@ export const cursos = [
       {
         titulo: "Essenciais",
         aulas: [
-          { id: 12, titulo: "Elementos semânticos" },
-          { id: 13, titulo: "Acessibilidade" },
-          { id: 14, titulo: "SEO Básico" }
+          {
+            id: 12,
+            titulo: "Elementos semânticos",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 13,
+            titulo: "Acessibilidade",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          { id: 14, titulo: "SEO Básico", videoAula: "", materialDidatico: "" }
         ]
       }
     ]
@@ -85,9 +145,19 @@ export const cursos = [
       {
         titulo: "Princípios",
         aulas: [
-          { id: 15, titulo: "Design Thinking" },
-          { id: 16, titulo: "Cores e Tipografia" },
-          { id: 17, titulo: "Componentes UI" }
+          {
+            id: 15,
+            titulo: "Design Thinking",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 16,
+            titulo: "Cores e Tipografia",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          { id: 17, titulo: "Componentes UI", videoAula: "", materialDidatico: "" }
         ]
       }
     ]
@@ -104,9 +174,19 @@ export const cursos = [
       {
         titulo: "ES6 Basics",
         aulas: [
-          { id: 18, titulo: "Arrow Functions" },
-          { id: 19, titulo: "Destructuring" },
-          { id: 20, titulo: "Classes" }
+          {
+            id: 18,
+            titulo: "Arrow Functions",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 19,
+            titulo: "Destructuring",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          { id: 20, titulo: "Classes", videoAula: "", materialDidatico: "" }
         ]
       }
     ]
@@ -123,9 +203,19 @@ export const cursos = [
       {
         titulo: "Otimização",
         aulas: [
-          { id: 21, titulo: "Web Vitals" },
-          { id: 22, titulo: "Cache Strategies" },
-          { id: 23, titulo: "Code Splitting" }
+          { id: 21, titulo: "Web Vitals", videoAula: "", materialDidatico: "" },
+          {
+            id: 22,
+            titulo: "Cache Strategies",
+            videoAula: "",
+            materialDidatico: ""
+          },
+          {
+            id: 23,
+            titulo: "Code Splitting",
+            videoAula: "",
+            materialDidatico: ""
+          }
         ]
       }
     ]
