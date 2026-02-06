@@ -21,6 +21,16 @@
   --cor-neutro-800: #1f2937;
   --cor-neutro-900: #111827;
 
+  /* Cores dinâmicas (invertem em modo escuro) */
+  --bg-corpo: #ffffff;
+  --cor-texto: #1f2937;
+  --cor-texto-secundaria: #4b5563;
+  --bg-secundario: #f9fafb;
+  --borda-cor: #e5e7eb;
+  --bg-card: #ffffff;
+  --bg-header: #ffffff;
+}
+
   --font-principal: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
@@ -57,10 +67,22 @@ html {
 
 body {
   font-family: var(--font-principal);
-  color: var(--cor-neutro-800);
-  background-color: var(--cor-neutro-50);
+  color: var(--cor-texto);
+  background-color: var(--bg-corpo);
   line-height: 1.6;
   font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo Escuro */
+html[data-tema="escuro"] {
+  --bg-corpo: #0f172a;
+  --cor-texto: #f1f5f9;
+  --cor-texto-secundaria: #cbd5e1;
+  --bg-secundario: #1e293b;
+  --borda-cor: #334155;
+  --bg-card: #1e293b;
+  --bg-header: #0f172a;
 }
 
 /* ============================================================================
@@ -71,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--espacamento-lg);
-  color: var(--cor-neutro-900);
+  color: var(--cor-texto);
 }
 
 h1 {
@@ -92,7 +114,7 @@ h4 {
 
 p {
   margin-bottom: var(--espacamento-md);
-  color: var(--cor-neutro-600);
+  color: var(--cor-texto-secundaria);
 }
 
 a {
@@ -125,12 +147,13 @@ main {
    ============================================================================ */
 
 .header {
-  background-color: white;
-  border-bottom: 1px solid var(--cor-neutro-200);
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--borda-cor);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: var(--sombra-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header-container {
@@ -176,7 +199,7 @@ main {
 .logo-text {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--cor-neutro-900);
+  color: var(--cor-texto);
 }
 
 .header .nav {
@@ -187,7 +210,7 @@ main {
 }
 
 .header .nav a {
-  color: var(--cor-neutro-600);
+  color: var(--cor-texto-secundaria);
   font-weight: 500;
   transition: var(--transicao);
 }
@@ -205,7 +228,33 @@ main {
 
 .usuario-nome {
   font-weight: 500;
-  color: var(--cor-neutro-700);
+  color: var(--cor-texto);
+}
+
+/* Botão Tema */
+.btn-tema {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-lg);
+  transition: var(--transicao);
+  color: var(--cor-texto);
+}
+
+.btn-tema:hover {
+  background-color: var(--bg-secundario);
+}
+
+.btn-tema:focus {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
 }
 
 /* ============================================================================
@@ -323,7 +372,7 @@ main {
    ============================================================================ */
 
 .card-curso {
-  background: white;
+  background: var(--bg-card);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
   transition: var(--transicao);
@@ -340,7 +389,7 @@ main {
 }
 
 .card-header {
-  background-color: var(--cor-neutro-100);
+  background-color: var(--bg-secundario);
   padding: var(--espacamento-2xl);
   display: flex;
   align-items: center;
@@ -369,7 +418,7 @@ main {
 .card-body p {
   flex: 1;
   margin-bottom: var(--espacamento-md);
-  color: var(--cor-neutro-600);
+  color: var(--cor-texto-secundaria);
 }
 
 .card-footer {
@@ -470,7 +519,7 @@ main {
 .progress-bar {
   width: 100%;
   height: 8px;
-  background-color: var(--cor-neutro-200);
+  background-color: var(--borda-cor);
   border-radius: var(--border-radius-md);
   overflow: hidden;
 }
@@ -483,7 +532,7 @@ main {
 
 .progress-text {
   font-size: 0.875rem;
-  color: var(--cor-neutro-500);
+  color: var(--cor-texto-secundaria);
   display: block;
   margin-top: var(--espacamento-sm);
 }
@@ -507,11 +556,13 @@ main {
 .input-busca,
 .select-categoria {
   padding: var(--espacamento-sm) var(--espacamento-lg);
-  border: 1px solid var(--cor-neutro-300);
+  border: 1px solid var(--borda-cor);
   border-radius: var(--border-radius-lg);
   font-family: inherit;
   font-size: 1rem;
   transition: var(--transicao);
+  background-color: var(--bg-card);
+  color: var(--cor-texto);
 }
 
 .input-busca:focus,
@@ -550,10 +601,11 @@ main {
 }
 
 .meta span {
-  background-color: var(--cor-neutro-100);
+  background-color: var(--bg-secundario);
   padding: var(--espacamento-sm) var(--espacamento-lg);
   border-radius: var(--border-radius-md);
   font-weight: 500;
+  color: var(--cor-texto);
 }
 
 .modulos {
@@ -562,7 +614,7 @@ main {
 }
 
 .modulo {
-  background: white;
+  background: var(--bg-card);
   padding: var(--espacamento-lg);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--sombra-sm);
@@ -583,7 +635,7 @@ main {
   align-items: stretch;
   gap: var(--espacamento-sm);
   padding: var(--espacamento-md) 0;
-  border-bottom: 1px solid var(--cor-neutro-100);
+  border-bottom: 1px solid var(--borda-cor);
   transition: var(--transicao);
 }
 
@@ -618,12 +670,12 @@ main {
 
 .aula-titulo {
   font-weight: 500;
-  color: var(--cor-neutro-800);
+  color: var(--cor-texto);
 }
 
 .aula-item.concluida .aula-titulo {
   text-decoration: line-through;
-  color: var(--cor-neutro-500);
+  color: var(--cor-texto-secundaria);
 }
 
 .aula-video {
@@ -638,7 +690,7 @@ main {
   aspect-ratio: 16 / 9;
   border: none;
   border-radius: var(--border-radius-md);
-  background-color: var(--cor-neutro-100);
+  background-color: var(--bg-secundario);
 }
 
 /* ============================================================================
@@ -669,7 +721,7 @@ main {
 }
 
 .resumo-card {
-  background: white;
+  background: var(--bg-card);
   padding: var(--espacamento-2xl);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--sombra-md);
@@ -686,7 +738,7 @@ main {
 .msg-vazia {
   text-align: center;
   padding: var(--espacamento-2xl);
-  color: var(--cor-neutro-500);
+  color: var(--cor-texto-secundaria);
 }
 
 .msg-vazia a {
@@ -698,11 +750,11 @@ main {
    ============================================================================ */
 
 .secao-cursos-destaque {
-  background-color: var(--cor-neutro-50);
+  background-color: var(--bg-secundario);
 }
 
 .secao-como-funciona {
-  background-color: white;
+  background-color: var(--bg-card);
 }
 
 .courses-container {
@@ -714,7 +766,7 @@ main {
 .vazio {
   text-align: center;
   padding: var(--espacamento-3xl);
-  color: var(--cor-neutro-500);
+  color: var(--cor-texto-secundaria);
 }
 
 /* ============================================================================

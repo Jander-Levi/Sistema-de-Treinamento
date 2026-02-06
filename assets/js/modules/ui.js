@@ -80,10 +80,39 @@ function obterCategorias() {
 // COMPONENTES
 // ============================================================================
 
+function alternarTema() {
+  const html = document.documentElement;
+  const temaAtual = html.getAttribute('data-tema') || 'claro';
+  const novoTema = temaAtual === 'claro' ? 'escuro' : 'claro';
+  
+  html.setAttribute('data-tema', novoTema);
+  localStorage.setItem('treinamento_tema', novoTema);
+  
+  // Atualizar o ícone do botão
+  const btnTema = document.querySelector("#btnTema");
+  if (btnTema) {
+    const novoIcone = novoTema === 'claro' ? '🌙' : '☀️';
+    const novaLabel = novoTema === 'claro' ? 'Ativar modo escuro' : 'Ativar modo claro';
+    btnTema.textContent = novoIcone;
+    btnTema.setAttribute('aria-label', novaLabel);
+    btnTema.setAttribute('title', novaLabel);
+  }
+}
+
+function inicializarTema() {
+  const temaArmazenado = localStorage.getItem('treinamento_tema') || 'claro';
+  document.documentElement.setAttribute('data-tema', temaArmazenado);
+}
+
 function criarHeader() {
   const estado = obterEstado();
   const header = document.createElement("header");
   header.className = "header";
+
+  // Determinando o ícone e aria-label baseado no tema atual
+  const temaAtual = document.documentElement.getAttribute('data-tema') || 'claro';
+  const iconeTema = temaAtual === 'claro' ? '🌙' : '☀️';
+  const ariaLabel = temaAtual === 'claro' ? 'Ativar modo escuro' : 'Ativar modo claro';
 
   header.innerHTML = `
     <div class="container">
@@ -94,6 +123,7 @@ function criarHeader() {
           <a href="#/courses">Cursos</a>
         </nav>
         <div class="header-actions">
+          <button class="btn-tema" id="btnTema" aria-label="${ariaLabel}" title="${ariaLabel}">${iconeTema}</button>
           ${
             estado.usuarioLogado
               ? `<span class="usuario-nome">${estado.usuarioNome}</span>
@@ -109,6 +139,14 @@ function criarHeader() {
   // Event listeners
   const btnEntrar = header.querySelector("#btnEntrar");
   const btnLogout = header.querySelector("#btnLogout");
+  const btnTema = header.querySelector("#btnTema");
+
+  if (btnTema) {
+    btnTema.addEventListener("click", (e) => {
+      e.preventDefault();
+      alternarTema();
+    });
+  }
 
   if (btnEntrar) {
     btnEntrar.addEventListener("click", (e) => {
@@ -583,6 +621,9 @@ export function renderDashboard() {
 // ============================================================================
 
 export function inicializarUI() {
+  // Inicializar tema
+  inicializarTema();
+  
   const body = document.body;
 
   // Header
