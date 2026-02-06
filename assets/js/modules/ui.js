@@ -414,6 +414,17 @@ export function renderCourseDetail(cursoId) {
     .addEventListener("click", () => navegar("#/courses"));
   container.appendChild(header);
 
+  // Botão para acessar o sistema de juros (apenas para cursos da categoria Financeiro)
+  if (curso.categoria === "Financeiro") {
+    const jurosLink = document.createElement("a");
+    jurosLink.href = "https://www.juros.systemcodex.com.br/";
+    jurosLink.target = "_blank";
+    jurosLink.rel = "noopener noreferrer";
+    jurosLink.className = "btn btn-secundario btn-juros";
+    jurosLink.textContent = "Sistema de Juros";
+    header.appendChild(jurosLink);
+  }
+
   // Módulos e aulas
   const modulosDiv = document.createElement("div");
   modulosDiv.className = "modulos";
