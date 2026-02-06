@@ -92,7 +92,6 @@ function criarHeader() {
         <nav class="nav">
           <a href="#/home">Início</a>
           <a href="#/courses">Cursos</a>
-          <a href="#/">Como funciona</a>
         </nav>
         <div class="header-actions">
           ${
