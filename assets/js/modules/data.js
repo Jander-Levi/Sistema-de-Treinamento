@@ -32,7 +32,7 @@ export const cursos = [
           {
             id: 2,
             titulo: "Como gerar boleto avulso",
-            videoAula: "assets/videos/aula1.mp4",
+            videoAula: "assets/videos/Financeiro avulso.mp4",
             materialDidatico: ""
           },
           {
