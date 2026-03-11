@@ -773,6 +773,27 @@ main {
   background-color: var(--cor-neutro-100);
 }
 
+.aula-material {
+  width: 100%;
+  max-width: 720px;
+  padding-left: calc(20px + var(--espacamento-lg));
+}
+
+.aula-material h4 {
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1rem;
+  color: var(--cor-neutro-700);
+}
+
+.aula-material-conteudo {
+  background-color: var(--cor-neutro-50);
+  border: 1px solid var(--cor-neutro-200);
+  border-radius: var(--border-radius-md);
+  padding: var(--espacamento-md);
+  color: var(--cor-neutro-700);
+  white-space: pre-line;
+}
+
 /* ============================================================================
    DASHBOARD
    ============================================================================ */

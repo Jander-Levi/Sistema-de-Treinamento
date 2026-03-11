@@ -25,14 +25,45 @@ export const cursos = [
         aulas: [
           {
             id: 1,
-            titulo: "Geração Financeiro em Lotes",
-            videoAula: "https://youtube.com/watch?v=FnK5rw0TiG4",
-            materialDidatico: ""
+            titulo: "Como gerar boleto avulso",
+            videoAula: "assets/videos/Financeiro avulso.mp4",
+            materialDidatico: `Passo a passo para gerar um Financeiro Avulso no sistema IXC Provedor:
+
+Passo 1: Acessar o Contrato do Cliente
+- No painel principal do cliente, clique na aba Contratos.
+- Selecione o contrato desejado e clique no botao Editar (ou de um duplo clique).
+- Com o contrato aberto, localize o botao Financeiro no menu superior e escolha a opcao Gerar financeiro avulso.
+
+Passo 2: Configurar a Venda (Saida)
+- Uma nova tela de "Venda" sera aberta. Preencha os campos obrigatorios.
+- Tipo de documento: no video, e utilizado o codigo 501 (Pedido de Venda).
+- Condicao de pagamento: selecione a opcao desejada (exemplo: "A vista").
+- Obs: adicione uma descricao para identificar a cobranca (exemplo: "Boleto teste").
+- Clique em Salvar.
+
+Passo 3: Adicionar o Produto ou Servico
+- Clique na aba Produtos dentro da mesma tela de Venda.
+- Clique em Novo.
+- No campo Produto, insira o codigo ou busque pelo item (no video, usa-se o codigo 1503 - Acordo Financeiro).
+- Ajuste o Valor Unitario (exemplo: R$ 150,00) e a Quantidade.
+- Clique em Salvar para incluir o item na venda e, em seguida, clique em Finalizar Saida.
+
+Passo 4: Fechamento e Gerar Boleto
+- Na tela de Fechamento, insira a Carteira de cobranca (exemplo: Gerencianet/Efi).
+- Clique em Salvar e Gerar Financeiro.
+- Va ate a aba Financeiro que aparecera no topo.
+- Se precisar alterar a data de vencimento, clique em Editar, mude o campo Data de vencimento e clique em Salvar.
+- Por fim, clique em Validar e Finalizar.
+
+Passo 5: Impressao do Titulo
+- Para visualizar o boleto gerado, acesse a aba Financeiro do contrato ou do cliente.
+- Selecione o titulo, clique em Imprimir Boletos e escolha a opcao desejada.
+- O sistema abrira o PDF do boleto pronto para envio ou impressao.`
           },
           {
             id: 2,
-            titulo: "Como gerar boleto avulso",
-            videoAula: "assets/videos/Financeiro avulso.mp4",
+            titulo: "Em produção...",
+            videoAula: "",
             materialDidatico: ""
           },
           {

@@ -34,6 +34,15 @@ function obterUrlEmbed(videoUrl) {
   return `https://www.youtube.com/embed/${match[1]}`;
 }
 
+function escaparHtml(texto = "") {
+  return String(texto)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function mostrarToast(mensagem, tipo = "sucesso") {
   const toast = document.createElement("div");
   toast.className = `toast toast-${tipo}`;
@@ -455,6 +464,14 @@ export function renderCourseDetail(cursoId) {
             </div>
           `
           : "";
+      const materialHtml = aula.materialDidatico
+        ? `
+            <div class="aula-material">
+              <h4>Material didatico</h4>
+              <div class="aula-material-conteudo">${escaparHtml(aula.materialDidatico)}</div>
+            </div>
+          `
+        : "";
       aulasHtml += `
         <li class="aula-item ${concluida ? "concluida" : ""}">
           <div class="aula-main">
@@ -465,6 +482,7 @@ export function renderCourseDetail(cursoId) {
             </label>
           </div>
           ${videoHtml}
+          ${materialHtml}
         </li>
       `;
     });
